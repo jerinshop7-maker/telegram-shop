@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Panel</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main class="wide">
+  <h2>⚙️ Admin Panel <small id="who" class="muted"></small></h2>
+  <nav class="tabs">
+    <button data-t="dash">ড্যাশবোর্ড</button><button data-t="users">ইউজার</button>
+    <button data-t="products">পণ্য ও স্টক</button><button data-t="orders">অর্ডার</button>
+    <button data-t="deposits">ডিপোজিট</button><button data-t="payments">পেমেন্ট মেথড</button>
+    <button data-t="admins" id="adminsTab">অ্যাডমিন</button>
+  </nav>
+  <div id="view"></div>
+</main>
+<div id="toast"></div>
+<script src="/common.js"></script>
+<script src="/admin.js"></script>
+</body>
+</html>

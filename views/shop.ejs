@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>শপ</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <section class="card profile">
+    <div><b id="pName">...</b><div class="muted" id="pUser"></div><div class="muted" id="pId"></div></div>
+    <div class="bal"><span class="muted">ব্যালেন্স</span><b id="pBal">৳0</b></div>
+  </section>
+
+  <div id="home" class="tab">
+    <button class="btn big" onclick="openDeposit()">💰 ডিপোজিট</button>
+    <h3>পণ্য</h3>
+    <div id="products"></div>
+  </div>
+  <div id="orders" class="tab" hidden>
+    <h3>আমার অর্ডার</h3><div id="orderList"></div>
+    <h3>ডিপোজিট হিস্ট্রি</h3><div id="depList"></div>
+  </div>
+  <div id="help" class="tab" hidden>
+    <h3>সাহায্য</h3>
+    <div class="card">
+      <p>১. 💰 ডিপোজিট বাটনে চেপে পেমেন্ট মেথড বেছে নিন।</p>
+      <p>২. টাকা পাঠিয়ে পরিমাণ, লেনদেনের আইডি ও পেমেন্ট প্রুফ জমা দিন।</p>
+      <p>৩. অ্যাডমিন অনুমোদন দিলে ব্যালেন্সে টাকা যোগ হবে।</p>
+      <p>৪. পণ্য কিনলে অর্ডারের XLSX ফাইল টেলিগ্রামে পাঠানো হবে।</p>
+      <p class="muted">সমস্যা হলে অ্যাডমিনের সাথে যোগাযোগ করুন।</p>
+    </div>
+  </div>
+</main>
+
+<nav class="bottom">
+  <button class="on" data-tab="home">🏠<span>হোম</span></button>
+  <button data-tab="orders">🛒<span>আমার অর্ডার</span></button>
+  <button data-tab="help">❓<span>সাহায্য</span></button>
+</nav>
+
+<div class="modal" id="buyModal" hidden><div class="sheet">
+  <h3 id="bName"></h3><p class="muted">দাম: ৳<span id="bPrice"></span> | স্টক: <span id="bStock"></span></p>
+  <label>পরিমাণ</label><input type="number" id="bQty" min="1" value="1" inputmode="numeric">
+  <p>মোট: <b>৳<span id="bTotal">0</span></b></p>
+  <button class="btn" id="bConfirm">নিশ্চিত করুন</button>
+  <button class="btn ghost" onclick="closeModals()">বাতিল</button>
+</div></div>
+
+<div class="modal" id="depModal" hidden><div class="sheet">
+  <h3>💰 ডিপোজিট</h3>
+  <label>পেমেন্ট মেথড</label><select id="dMethod"></select>
+  <div class="card muted" id="dDetails"></div>
+  <label>টাকার পরিমাণ</label><input type="number" id="dAmount" min="1" inputmode="decimal">
+  <label>লেনদেনের আইডি</label><input type="text" id="dTrx">
+  <label>পেমেন্ট প্রুফ</label><input type="file" id="dProof" accept="image/*">
+  <button class="btn" id="dSubmit">জমা দিন</button>
+  <button class="btn ghost" onclick="closeModals()">বাতিল</button>
+</div></div>
+
+<div id="toast"></div>
+<script src="/common.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>

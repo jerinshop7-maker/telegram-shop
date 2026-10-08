@@ -1,0 +1,29 @@
+:root{--bg:#0e0f14;--card:#181a22;--line:#2a2d3a;--text:#eceef5;--muted:#8a8fa3;--gold:#f5c04a;--ok:#3ecf8e;--bad:#ff5d6c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,"Noto Sans Bengali",Roboto,sans-serif;font-size:15px}
+main{max-width:520px;margin:auto;padding:14px 14px 90px}main.wide{max-width:1000px}
+h2,h3{margin:14px 0 8px}p{margin:6px 0}small{font-size:12px}
+.muted{color:var(--muted);font-size:13px}.err{color:var(--bad)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin:10px 0}
+.profile{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,#1d1f2b,#2a2312)}
+.bal{text-align:right;display:flex;flex-direction:column}.bal b{color:var(--gold);font-size:22px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.btn{display:block;width:100%;padding:12px;margin:8px 0;border:0;border-radius:12px;background:linear-gradient(135deg,#f5c04a,#e29a1b);color:#1a1300;font-weight:700;font-size:15px}
+.btn.big{padding:15px}.btn.small{display:inline-block;width:auto;padding:6px 12px;margin:2px;font-size:13px}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}.btn:disabled{opacity:.5}
+input,select,textarea{width:100%;padding:11px;margin:6px 0;background:#0e0f14;color:var(--text);border:1px solid var(--line);border-radius:10px;font-size:15px}
+label{font-size:13px;color:var(--muted)}
+.tag{font-size:12px;padding:2px 8px;border-radius:20px;background:#2a2d3a}.tag.approved{color:var(--ok)}.tag.rejected{color:var(--bad)}.tag.pending{color:var(--gold)}
+nav.bottom{position:fixed;bottom:0;left:0;right:0;display:flex;background:#12131a;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+nav.bottom button{flex:1;background:none;border:0;color:var(--muted);padding:9px 0;font-size:20px;display:flex;flex-direction:column;align-items:center}
+nav.bottom button span{font-size:11px}nav.bottom button.on{color:var(--gold)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:flex-end;z-index:10}.modal[hidden]{display:none}
+.sheet{background:var(--card);width:100%;max-width:520px;margin:auto;padding:16px;border-radius:18px 18px 0 0;max-height:92vh;overflow:auto}
+#toast{position:fixed;top:14px;left:50%;transform:translateX(-50%);background:#272a38;padding:10px 16px;border-radius:12px;opacity:0;pointer-events:none;transition:.3s;z-index:20;max-width:90%}
+#toast.show{opacity:1}
+nav.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+nav.tabs button{padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text)}
+nav.tabs button.on{background:var(--gold);color:#1a1300}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{color:var(--muted)}
